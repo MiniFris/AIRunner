@@ -1,0 +1,15 @@
+﻿<Page x:Class="AIRunner.Page.Game"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AIRunner.Page"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="400"
+      Title="Game">
+
+    <Canvas>
+        <Rectangle x:Name="AIRunnerOBJ" Width="20" Height="20" Fill="#FF0080FF"/>
+        <Rectangle x:Name="BotOBJ" Width="20" Height="20" Fill="#FFFF8000"/>
+    </Canvas>
+</Page>

@@ -1,0 +1,278 @@
+﻿<Window x:Class="AIRunner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AIRunner"
+        mc:Ignorable="d"
+        Title="AI Runner" MinHeight="800" Width="1200" Loaded="Window_Loaded" KeyDown="Window_KeyDown" MinWidth="1200">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid  HorizontalAlignment="Left" Width="550" Margin="0,0,100,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="2" ScaleY="2"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+                <StackPanel x:Name="InputNeurons" VerticalAlignment="Center">
+                    <Grid Margin="5">
+                        <Ellipse Width="20" Height="20" Fill="#FF00AEFF"/>
+                        <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="6" TextAlignment="Center" Foreground="White"/>
+                    </Grid>
+                    <Grid Margin="5">
+                        <Ellipse Width="20" Height="20" Fill="#FF00AEFF"/>
+                        <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="6" TextAlignment="Center" Foreground="White"/>
+                    </Grid>
+                    <Grid Margin="5">
+                        <Ellipse Width="20" Height="20" Fill="#FF00AEFF"/>
+                        <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="6" TextAlignment="Center" Foreground="White"/>
+                    </Grid>
+                    <Grid Margin="5">
+                        <Ellipse Width="20" Height="20" Fill="#FF00AEFF"/>
+                        <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="6" TextAlignment="Center" Foreground="White"/>
+                    </Grid>
+                </StackPanel>
+                <Grid Width="50">
+                    <Grid>
+                        <Line X1="0" Y1="45" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="75" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="105" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="105" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="135" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                </Grid>
+                <StackPanel VerticalAlignment="Center">
+                    <Ellipse Margin="5" Width="20" Height="20" Fill="#FF00AEFF"/>
+                    <Ellipse Margin="5" Width="20" Height="20" Fill="#FF00AEFF"/>
+                    <Ellipse Margin="5" Width="20" Height="20" Fill="#FF00AEFF"/>
+                    <Ellipse Margin="5" Width="20" Height="20" Fill="#FF00AEFF"/>
+                    <Ellipse Margin="5" Width="20" Height="20" Fill="#FF00AEFF"/>
+                    <Ellipse Margin="5" Width="20" Height="20" Fill="#FF00AEFF"/>
+                </StackPanel>
+                <Grid Width="50">
+                    <Grid>
+                        <Line X1="0" Y1="15" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="15" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="15" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="15" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="15" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="15" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="45" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="75" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="105" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="135" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="165" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="165" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="165" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="165" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="165" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="165" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                </Grid>
+                <StackPanel VerticalAlignment="Center">
+                    <Ellipse Margin="5" Width="20" Height="20" Fill="#FF00AEFF"/>
+                    <Ellipse Margin="5" Width="20" Height="20" Fill="#FF00AEFF"/>
+                    <Ellipse Margin="5" Width="20" Height="20" Fill="#FF00AEFF"/>
+                    <Ellipse Margin="5" Width="20" Height="20" Fill="#FF00AEFF"/>
+                    <Ellipse Margin="5" Width="20" Height="20" Fill="#FF00AEFF"/>
+                    <Ellipse Margin="5" Width="20" Height="20" Fill="#FF00AEFF"/>
+                </StackPanel>
+                <Grid Width="50" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                            <SkewTransform AngleY="0" AngleX="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Grid>
+                        <Line X1="0" Y1="45" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="45" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="75" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="75" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="105" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="105" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="105" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                    <Grid>
+                        <Line X1="0" Y1="135" X2="50" Y2="15" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="45" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="75" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="105" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="135" Stroke="Black" StrokeThickness="1"/>
+                        <Line X1="0" Y1="135" X2="50" Y2="165" Stroke="Black" StrokeThickness="1"/>
+                    </Grid>
+                </Grid>
+                <StackPanel x:Name="OutNeurons" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Margin="5">
+                            <Ellipse Margin="0" Width="20" Height="20" Fill="#FF00AEFF"/>
+                            <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="6" TextAlignment="Center" Foreground="White"/>
+                        </Grid>
+                        <Image Width="10" Height="10" Source="resources/arrow.png" Opacity="0.5"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Margin="5">
+                            <Ellipse Margin="0" Width="20" Height="20" Fill="#FF00AEFF"/>
+                            <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="6" TextAlignment="Center" Foreground="White"/>
+                        </Grid>
+                        <Image Width="10" Height="10" Source="resources/arrow.png" Opacity="0.5" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Margin="5">
+                            <Ellipse Margin="0" Width="20" Height="20" Fill="#FF00AEFF"/>
+                            <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="6" TextAlignment="Center" Foreground="White"/>
+                        </Grid>
+                        <Image Width="10" Height="10" Source="resources/arrow.png" Opacity="0.5" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Margin="5">
+                            <Ellipse Margin="0" Width="20" Height="20" Fill="#FF00AEFF"/>
+                            <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="6" TextAlignment="Center" Foreground="White"/>
+                        </Grid>
+                        <Image Width="10" Height="10" Source="resources/arrow.png" Opacity="0.5" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="270"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </StackPanel>
+                </StackPanel>
+                <Image Source="resources/arrow.png" Width="10" Height="10" Margin="20,0,0,0" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform x:Name="Arrow" Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,100">
+                <TextBlock Text="300" x:Name="SliderVal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Slider ValueChanged="Slider_ValueChanged" Value="300" Width="100" Maximum="1000" Minimum="10" SmallChange="10" LargeChange="10" IsSnapToTickEnabled="True" TickFrequency="10"/>
+            </StackPanel>
+        </Grid>
+        <StackPanel Width="400" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10" HorizontalAlignment="Center">
+                <TextBlock x:Name="Round" Margin="10"  Text="Раунд: 0" FontWeight="Bold" FontSize="18"/>
+                <TextBlock x:Name="Moves" Margin="10" Text="Ходов: 0" FontWeight="Bold" FontSize="18"/>
+            </StackPanel>
+            <Frame x:Name="MainFrame" BorderBrush="#FFFFA200" BorderThickness="2" Width="400" Height="400"/>
+            <ListBox x:Name="StatusList" Height="200" Margin="0,20,0,0"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
